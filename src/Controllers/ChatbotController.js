@@ -7,10 +7,8 @@ export default class ChatbotController {
   }
 
   init() {
-    // Render chatbots on the page
     this.chatView.renderChatbot(this.chatbots);
 
-    // Handle form submission
     this.chatView.chatInputForm.addEventListener('submit', (event) => {
       event.preventDefault();
       const userInput = this.chatView.chatInput.value.trim();
