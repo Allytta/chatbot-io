@@ -18,7 +18,7 @@ async function createChatbots() {
       { keyword: 'hello', response: 'Hello, I am Mercy.' },
       { keyword: 'bye', response: 'Goodbye!' },
       { keyword: 'overwatch', response: 'It permit me to heal on the battlefield.' },
-      { keyword: 'help', response: 'My keywords are : hello, bye, overwatch' },
+      { keyword: 'help', response: 'My keywords are : hello, bye, overwatch, weather' },
       { keyword: 'weather', response: await apiWeather.getWeather() } /* ,
       { keyword: 'chatGPT', response: await apiChatGPT.getChatGPTAnswer() } */
     ]),
@@ -26,14 +26,14 @@ async function createChatbots() {
       { keyword: 'how are you', response: 'I am doing well, thank you for asking.' },
       { keyword: 'favorite game', response: 'My favorite game is Starcraft II.' },
       { keyword: 'overwatch', response: 'Overwatch helped me against the Gwishins.' },
-      { keyword: 'help', response: 'My keywords are : how are you, favorite game, overwatch' },
+      { keyword: 'help', response: 'My keywords are : how are you, favorite game, overwatch, chuck norris' },
       { keyword: 'chuck norris', response: await apiChuckNorris.getChuckNorrisJoke() }
     ]),
     new Chatbot('Genji', imgGengi, 'A steady blade', [
       { keyword: 'who are you', response: 'I am Genji, the cyborg ninja.' },
       { keyword: 'favorite food', response: 'I do not have a favorite food. But if I really have to choose : ramen !' },
       { keyword: 'overwatch', response: 'It was a second chance for me.' },
-      { keyword: 'help', response: 'My keywords are : who are you, favorite food, overwatch' },
+      { keyword: 'help', response: 'My keywords are : who are you, favorite food, overwatch, user' },
       { keyword: 'user', response: await apiRandomUser.getRandomUser() }
     ])
   ];
