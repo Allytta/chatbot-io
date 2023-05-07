@@ -5,7 +5,6 @@ export default class API {
 
   // Appel au service d'API de OpenWeatherMap
   async getWeather() {
-    console.log('fired');
     const url = `https://api.openweathermap.org/data/2.5/weather?q=Pau&appid=${this.privateKey}&units=metric`;
     const response = await fetch(url);
     const {
