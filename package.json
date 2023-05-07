@@ -1,0 +1,48 @@
+{
+  "name": "@so-xzen/chat-bot-io-v2",
+  "version": "1.0.0",
+  "description": "Chat Bot IO v2",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx webpack-dev-server --mode development",
+    "dist": "npx webpack --mode production --progress=profile",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xzen/chat-bot-io-v2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xzen/chat-bot-io-v2/issues"
+  },
+  "homepage": "https://github.com/xzen/chat-bot-io-v2#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.21.8",
+    "@babel/eslint-parser": "^7.5.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.16.0",
+    "@babel/plugin-syntax-top-level-await": "^7.14.5",
+    "@babel/preset-env": "^7.21.5",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-webpack-plugin": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "sass": "^1.43.4",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.2.6",
+    "webpack": "^5.63.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.4.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "file-loader": "^6.2.0",
+    "openai": "^3.2.1"
+  }
+}
