@@ -8,9 +8,9 @@ import imgGengi from './Ressources/img/Genji.png';
 import './index.scss';
 
 const apiChuckNorris = new API();
-const apiWeather = new API('647bf9d7c144c2f46a1bd1246534f64a');
+const apiWeather = new API('METTRE_CLE_ICI');
 const apiRandomUser = new API();
-const apiChatGPT = new API('');
+/* const apiChatGPT = new API(''); */
 
 async function createChatbots() {
   const chatbots = [
@@ -19,8 +19,8 @@ async function createChatbots() {
       { keyword: 'bye', response: 'Goodbye!' },
       { keyword: 'overwatch', response: 'It permit me to heal on the battlefield.' },
       { keyword: 'help', response: 'My keywords are : hello, bye, overwatch' },
-      { keyword: 'weather', response: await apiWeather.getWeather() },
-      { keyword: 'chatGPT', response: await apiChatGPT.getChatGPTAnswer() }
+      { keyword: 'weather', response: await apiWeather.getWeather() } /* ,
+      { keyword: 'chatGPT', response: await apiChatGPT.getChatGPTAnswer() } */
     ]),
     new Chatbot('D.va', imgDva, 'Nerf this', [
       { keyword: 'how are you', response: 'I am doing well, thank you for asking.' },
