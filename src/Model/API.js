@@ -1,3 +1,5 @@
+const { Configuration, OpenAIApi } = require('openai');
+
 export default class API {
   constructor(privateKey) {
     this.privateKey = privateKey;
@@ -5,7 +7,6 @@ export default class API {
 
   // Appel au service d'API de OpenWeatherMap
   async getWeather() {
-    console.log('fired');
     const url = `https://api.openweathermap.org/data/2.5/weather?q=Pau&appid=${this.privateKey}&units=metric`;
     const response = await fetch(url);
     const {
@@ -39,23 +40,18 @@ export default class API {
   // Appel au service d'API de ChatGPT
   async getChatGPTAnswer() {
     const inputText = document.getElementById('chatInput')?.value;
-    return inputText;
-    const url = 'https://api.openai.com/v1/engines/davinci-codex/completions';
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${API.privateKey}`
-      },
-      body: JSON.stringify({
-        prompt: inputText,
-        max_tokens: 100,
-        n: 1,
-        stop: '\n',
-        temperature: 0.7
-      })
+    const promptText = inputText.toLowerCase().split('chatgpt')[1];
+
+    const configuration = new Configuration({
+      apiKey: this.privateKey
     });
-    const { choices } = await response.json();
-    return choices[0].text.trim();
+    const openai = new OpenAIApi(configuration);
+
+    const completion = await openai.createChatCompletion({
+      model: 'gpt-3.5-turbo',
+      messages: [{ role: 'user', content: promptText }]
+    });
+
+    return completion.data.choices[0].message;
   }
 }

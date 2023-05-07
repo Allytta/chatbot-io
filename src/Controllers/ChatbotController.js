@@ -17,14 +17,14 @@ export default class ChatbotController {
       if (userInput) {
         const userMessage = new Message(userInput, true, new Date(), null, null);
         this.chatView.renderChatMessage(userMessage, true);
-        this.chatView.chatInput.value = '';
-        this.chatbots.forEach((chatbot) => {
-          const responded = chatbot.sendMessage(userMessage);
+        this.chatbots.forEach(async (chatbot) => {
+          const responded = await chatbot.sendMessage(userMessage);
           if (responded) {
             const botMessage = chatbot.messages[chatbot.messages.length - 1];
             this.chatView.renderChatMessage(botMessage, false);
           }
         });
+        this.chatView.chatInput.value = '';
       }
     });
   }
